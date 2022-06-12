@@ -4,24 +4,27 @@ import imageUrlBuilder from '@sanity/image-url'
 import { client } from '../../lib/sanity'
 import { BiCopy } from 'react-icons/bi'
 import { FaCheck } from 'react-icons/fa'
-
+import Image from 'next/image'
 const Receive = ({ }) => {
   const [imageUrl, setImageUrl] = useState(null)
   const [copied, setCopied] = useState(false)
   const [builder] = useState(imageUrlBuilder(client))
   const walletAddress = '0x9858f48790e25c54325F610904e744eFa155584c'
-//   useEffect(() => {
-//     const url = imageUrlBuilder(client).image(selectedToken.logo.asset._ref).url()
-//     setImageUrl(url)
-//   }, [selectedToken, builder])
+  //   useEffect(() => {
+  //     const url = imageUrlBuilder(client).image(selectedToken.logo.asset._ref).url()
+  //     setImageUrl(url)
+  //   }, [selectedToken, builder])
 
   return (
-       
+
     <Wrapper>
       <Content>
         <QRContainer>
-          <img
-            src={`https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${walletAddress}`}
+          <Image
+            src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=0x9858f48790e25c54325F610904e744eFa155584c"
+            width={500}
+            height={500}
+            alt="Landscape picture"
           />
         </QRContainer>
         <Divider />
