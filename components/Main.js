@@ -3,10 +3,14 @@ import Portfolio from './portfolio'
 import styled from 'styled-components'
 import Promos from './Promos'
 
-const main = () => {
+const main = ({  thirdWebTokens, sanityTokens, walletAddress}) => {
     return (
         <Wrapper>
-            <Portfolio />
+            <Portfolio 
+            walletAddress={walletAddress}
+            sanityTokens={sanityTokens}
+             thirdWebTokens={thirdWebTokens}
+             />
             <Promos />
         </Wrapper>
     )

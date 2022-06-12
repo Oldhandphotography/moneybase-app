@@ -12,7 +12,7 @@ export default function Home() {
       ) : (
         <WalletConnect>
           <Button onClick={() => connectWallet('injected')}>
-            Connect Wallet
+            Connect Your Wallet
           </Button>
           <Details>
             You need Chrome to be
