@@ -2,30 +2,31 @@ import React,{useState} from 'react'
 import styled from 'styled-components'
 import CoinbaseLogo from '../assets/cb-logo.png'
 import Image from 'next/image/'
-import {navItems} from '../static/navitems'
-const Sidebar = () => {
+import {navItems} from './navItems'
+// import    from './../pages/Dashboard.js' 
+function Sidebar() {
   const [activeIcon, setActiveIcon] = useState(navItems[0].title)
-    return (
-        <Wrapper>
-            <LogoContainer>
-                <Logo>
-                    <Image src={CoinbaseLogo} alt='Coinbase Logo' />
-                </Logo>
-            </LogoContainer>
+  return (
+    <Wrapper>
+      <LogoContainer>
+        <Logo>
+          <Image src={CoinbaseLogo} alt='Coinbase Logo' />
+        </Logo>
+      </LogoContainer>
 
 
-            {<NavItemsContainer>
+      {<NavItemsContainer>
         {navItems.map((item, index) => (
           <NavItem key={index} onClick={() => setActiveIcon(item.title)}>
-            <NavIcon  style={{ color: item.title === activeIcon && '#3773f5' }}>
+            <NavIcon style={{ color: item.title === activeIcon && '#3773f5' }}>
               {item.icon}
-            </NavIcon> 
+            </NavIcon>
             <NavTitle>{item.title}</NavTitle>
           </NavItem>
         ))}
-        </NavItemsContainer> }
-        </Wrapper>
-    )
+      </NavItemsContainer>}
+    </Wrapper>
+  )
 }
 
 export default Sidebar
